@@ -222,12 +222,12 @@ namespace NodeHDF5 {
             hid_t type_id = toTypeMap[(H5T)field->Get(String::NewFromUtf8(v8::Isolate::GetCurrent(), "type"))->Int32Value()];
             if (type_id==H5T_NATIVE_LLONG) {
               for (uint32_t j = 0; j < nrecords; j++) {
-                long long value = field->Get(j)->NumberValue();
+                long long value = field->Get(j)->IntegerValue();
                 std::memcpy(&data[j * type_size + field_offsets[i]], &value, 8);
               }
             } else if(type_id==H5T_NATIVE_ULLONG) {
               for (uint32_t j = 0; j < nrecords; j++) {
-                unsigned long long value = field->Get(j)->NumberValue();
+                unsigned long long value = field->Get(j)->IntegerValue();
                 std::memcpy(&data[j * type_size + field_offsets[i]], &value, 8);
               }
             }
