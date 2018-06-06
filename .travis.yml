@@ -7,7 +7,7 @@ node_js:
   
 env:
   - GCC_VERSION="export CC=gcc-7 && export CXX=g++-7"
-  #  - GCC_VERSION="export CC=gcc-6 && export CXX=g++-6"
+  - GCC_VERSION="export CC=gcc-4.9 && export CXX=g++-4.9"
   
 os: 
   - linux
@@ -19,6 +19,7 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-7
+      - g++-4.9
       - libhdf5-dev
       
 osx_image: xcode8
